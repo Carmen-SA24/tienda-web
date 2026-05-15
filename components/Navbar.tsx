@@ -3,10 +3,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { getProfile } from "@/lib/api";
+import { getProfile, getCarrito } from "@/lib/api";
+import type { User } from "@/lib/api";
 
 export default function Navbar() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState<User | null>(null);
   const [cartCount, setCartCount] = useState(0);
 
   // Carga los datos del usuario al montar el componente
@@ -23,10 +24,7 @@ export default function Navbar() {
         });
 
       // Obtener conteo del carrito
-      fetch("/api/tienda/carrito/mio", {
-        headers: { Authorization: `Bearer ${token}` },
-      })
-        .then((res) => res.json())
+      getCarrito()
         .then((data) => {
           if (Array.isArray(data)) {
             setCartCount(data.reduce((sum, item) => sum + item.cantidad, 0));
