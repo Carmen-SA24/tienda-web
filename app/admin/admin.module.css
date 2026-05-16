@@ -1,0 +1,132 @@
+/* Estilos para el panel de administración */
+
+.contenedor {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.titulo {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text, #1e293b);
+  margin-bottom: 0.5rem;
+}
+
+.subtitulo {
+  font-size: 0.95rem;
+  color: var(--text-light, #64748b);
+  margin-bottom: 1.5rem;
+}
+
+.cargando {
+  text-align: center;
+  padding: 3rem;
+  color: #64748b;
+  font-size: 1.05rem;
+}
+
+.error {
+  background: #fef2f2;
+  color: #dc2626;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.tabla th {
+  background: #f8fafc;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.tabla td {
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  color: var(--text, #1e293b);
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+}
+
+.tabla tr:last-child td {
+  border-bottom: none;
+}
+
+.tabla tr:hover td {
+  background: #f8fafc;
+}
+
+.precioCol {
+  font-weight: 600;
+  color: var(--primary, #2563eb);
+}
+
+.stockCol {
+  font-weight: 500;
+}
+
+.disponible {
+  color: var(--success, #16a34a);
+}
+
+.agotado {
+  color: var(--danger, #dc2626);
+}
+
+.acciones {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btnEditar {
+  padding: 0.375rem 0.75rem;
+  background: #eff6ff;
+  color: var(--primary, #2563eb);
+  border: 1px solid #bfdbfe;
+  border-radius: 0.375rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.btnEditar:hover {
+  background: #dbeafe;
+}
+
+.btnEliminar {
+  padding: 0.375rem 0.75rem;
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+  border-radius: 0.375rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.btnEliminar:hover {
+  background: #fee2e2;
+}
+
+.vacio {
+  text-align: center;
+  padding: 3rem;
+  color: #64748b;
+}
