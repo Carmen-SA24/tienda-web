@@ -144,6 +144,32 @@ a:hover {
   color: var(--danger);
 }
 
+/* Botón añadir al carrito en tarjetas de producto */
+.btn-add-cart {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary, #2563eb);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius, 8px);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: auto;
+}
+
+.btn-add-cart:hover {
+  background-color: var(--primary-hover, #1d4ed8);
+}
+
+.btn-add-cart:disabled {
+  background-color: var(--secondary, #64748b);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
 /* Formularios */
 .form-group {
   margin-bottom: 1rem;

@@ -1,17 +1,18 @@
 // Página principal - Catálogo de productos
-// Muestra todos los productos disponibles con opción de búsqueda
+// Muestra todos los productos disponibles con opción de búsqueda y botón para añadir al carrito
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { getProductos } from "@/lib/api";
+import { getProductos, addToCarrito } from "@/lib/api";
 import Navbar from "@/components/Navbar";
 import type { Producto } from "@/lib/api";
 
 export default function Home() {
-  // Estado para productos, búsqueda y carga
+  // Estado para productos, búsqueda, carga y mensaje de confirmación
   const [productos, setProductos] = useState<Producto[]>([]);
   const [query, setQuery] = useState("");
   const [loading, setLoading] = useState(true);
+  const [mensaje, setMensaje] = useState("");
 
   /**
    * Obtiene los productos desde la API
@@ -38,11 +39,30 @@ export default function Home() {
     return () => clearTimeout(timer);
   }, [fetchProductos]);
 
+  /**
+   * Añade un producto al carrito
+   * @param productoId - ID del producto a añadir
+   */
+  const handleAddToCart = async (productoId: number) => {
+    try {
+      await addToCarrito({ productoId });
+      setMensaje("Producto añadido al carrito");
+      // Limpiar mensaje después de 2 segundos
+      setTimeout(() => setMensaje(""), 2000);
+    } catch (err) {
+      setMensaje("Error al añadir. ¿Has iniciado sesión?");
+      setTimeout(() => setMensaje(""), 3000);
+    }
+  };
+
   return (
     <>
       <Navbar />
       <div className="container">
         <h1>Catálogo de productos</h1>
+
+        {/* Mensaje de confirmación */}
+        {mensaje && <div className="alert alert-success">{mensaje}</div>}
 
         {/* Barra de búsqueda */}
         <div className="search-bar">
@@ -83,6 +103,14 @@ export default function Home() {
                         ? `${producto.stock} unidades`
                         : "Sin stock"}
                     </p>
+                    {/* Botón para añadir al carrito */}
+                    <button
+                      className="btn-add-cart"
+                      onClick={() => handleAddToCart(producto.id)}
+                      disabled={producto.stock <= 0}
+                    >
+                      {producto.stock > 0 ? "Añadir al carrito" : "Sin stock"}
+                    </button>
                   </div>
                 </div>
               ))
