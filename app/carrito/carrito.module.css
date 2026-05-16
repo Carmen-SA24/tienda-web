@@ -1,4 +1,5 @@
 /* Estilos para la página del carrito de compra */
+/* Tema oscuro con acentos índigo y ámbar */
 
 .contenedor {
   max-width: 900px;
@@ -9,14 +10,14 @@
 .titulo {
   font-size: 1.75rem;
   font-weight: 700;
-  color: var(--text, #1e293b);
+  color: var(--text);
   margin-bottom: 1.5rem;
 }
 
 .vacio {
   text-align: center;
   padding: 3rem 1rem;
-  color: #64748b;
+  color: var(--text-light);
 }
 
 .vacio p {
@@ -27,16 +28,17 @@
 .enlaceCatalogo {
   display: inline-block;
   padding: 0.625rem 1.25rem;
-  background-color: var(--primary, #2563eb);
+  background: linear-gradient(135deg, var(--primary), #6366f1);
   color: #fff;
   text-decoration: none;
-  border-radius: 0.5rem;
+  border-radius: var(--radius-sm);
   font-weight: 500;
-  transition: background-color 0.2s;
+  transition: background 0.2s;
 }
 
 .enlaceCatalogo:hover {
-  background-color: #1d4ed8;
+  background: linear-gradient(135deg, var(--primary-hover), #4f46e5);
+  text-decoration: none;
 }
 
 .lista {
@@ -51,17 +53,22 @@
   align-items: center;
   gap: 1rem;
   padding: 1rem;
-  background: #fff;
-  border: 1px solid #e2e8f0;
-  border-radius: 0.75rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: border-color 0.2s;
+}
+
+.item:hover {
+  border-color: var(--border-light);
 }
 
 .itemImagen {
   width: 80px;
   height: 80px;
   object-fit: cover;
-  border-radius: 0.5rem;
+  border-radius: var(--radius-sm);
   flex-shrink: 0;
 }
 
@@ -73,19 +80,19 @@
 .itemNombre {
   font-size: 1rem;
   font-weight: 600;
-  color: var(--text, #1e293b);
+  color: var(--text);
   margin-bottom: 0.25rem;
 }
 
 .itemPrecio {
   font-size: 0.95rem;
-  color: var(--primary, #2563eb);
+  color: var(--accent);
   font-weight: 600;
 }
 
 .itemSubtotal {
   font-size: 0.85rem;
-  color: #64748b;
+  color: var(--text-light);
 }
 
 .controles {
@@ -98,20 +105,22 @@
 .btnCantidad {
   width: 32px;
   height: 32px;
-  border: 1px solid #cbd5e1;
-  background: #f8fafc;
-  border-radius: 0.375rem;
+  border: 1px solid var(--border);
+  background: var(--bg-input);
+  border-radius: var(--radius-sm);
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.15s;
+  transition: background 0.15s;
+  color: var(--text);
 }
 
 .btnCantidad:hover {
-  background: #e2e8f0;
+  background: var(--bg-card-hover);
+  border-color: var(--primary);
 }
 
 .btnCantidad:disabled {
@@ -124,36 +133,37 @@
   font-weight: 600;
   min-width: 24px;
   text-align: center;
+  color: var(--text);
 }
 
 .btnEliminar {
   padding: 0.375rem 0.75rem;
-  background: #fef2f2;
-  color: #dc2626;
-  border: 1px solid #fecaca;
-  border-radius: 0.375rem;
+  background: rgba(220, 38, 38, 0.15);
+  color: #fca5a5;
+  border: 1px solid rgba(220, 38, 38, 0.3);
+  border-radius: var(--radius-sm);
   font-size: 0.85rem;
   cursor: pointer;
-  transition: background-color 0.15s;
+  transition: background 0.15s;
   margin-left: 0.5rem;
 }
 
 .btnEliminar:hover {
-  background: #fee2e2;
+  background: rgba(220, 38, 38, 0.25);
 }
 
 .resumen {
-  background: #fff;
-  border: 1px solid #e2e8f0;
-  border-radius: 0.75rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
   padding: 1.5rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow);
 }
 
 .resumenTitulo {
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--text, #1e293b);
+  color: var(--text);
   margin-bottom: 1rem;
 }
 
@@ -162,7 +172,7 @@
   justify-content: space-between;
   padding: 0.5rem 0;
   font-size: 0.95rem;
-  color: #475569;
+  color: var(--text-light);
 }
 
 .filaResumenTotal {
@@ -170,10 +180,10 @@
   justify-content: space-between;
   padding: 0.75rem 0 0;
   margin-top: 0.75rem;
-  border-top: 2px solid #e2e8f0;
+  border-top: 2px solid var(--border);
   font-size: 1.125rem;
   font-weight: 700;
-  color: var(--text, #1e293b);
+  color: var(--accent);
 }
 
 .btnPagar {
@@ -181,46 +191,50 @@
   width: 100%;
   padding: 0.75rem;
   margin-top: 1.25rem;
-  background-color: #16a34a;
+  background: linear-gradient(135deg, var(--success), #10b981);
   color: #fff;
   border: none;
-  border-radius: 0.5rem;
+  border-radius: var(--radius-sm);
   font-size: 1.05rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background 0.2s, transform 0.1s;
 }
 
 .btnPagar:hover {
-  background-color: #15803d;
+  background: linear-gradient(135deg, #047857, #059669);
+  transform: scale(1.02);
 }
 
 .btnPagar:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+  transform: none;
 }
 
 .error {
-  background: #fef2f2;
-  color: #dc2626;
+  background: rgba(220, 38, 38, 0.15);
+  color: #fca5a5;
   padding: 0.75rem 1rem;
-  border-radius: 0.5rem;
+  border-radius: var(--radius-sm);
   margin-bottom: 1rem;
   font-size: 0.9rem;
+  border: 1px solid rgba(220, 38, 38, 0.3);
 }
 
 .exito {
-  background: #f0fdf4;
-  color: #16a34a;
+  background: rgba(5, 150, 105, 0.15);
+  color: #6ee7b7;
   padding: 0.75rem 1rem;
-  border-radius: 0.5rem;
+  border-radius: var(--radius-sm);
   margin-bottom: 1rem;
   font-size: 0.9rem;
+  border: 1px solid rgba(5, 150, 105, 0.3);
 }
 
 .cargando {
   text-align: center;
   padding: 3rem;
-  color: #64748b;
+  color: var(--text-light);
   font-size: 1.05rem;
 }

@@ -1,4 +1,5 @@
 /* Estilos para el panel de administración */
+/* Tema oscuro con acentos índigo y ámbar */
 
 .contenedor {
   max-width: 1100px;
@@ -9,59 +10,60 @@
 .titulo {
   font-size: 1.75rem;
   font-weight: 700;
-  color: var(--text, #1e293b);
+  color: var(--text);
   margin-bottom: 0.5rem;
 }
 
 .subtitulo {
   font-size: 0.95rem;
-  color: var(--text-light, #64748b);
+  color: var(--text-light);
   margin-bottom: 1.5rem;
 }
 
 .cargando {
   text-align: center;
   padding: 3rem;
-  color: #64748b;
+  color: var(--text-light);
   font-size: 1.05rem;
 }
 
 .error {
-  background: #fef2f2;
-  color: #dc2626;
+  background: rgba(220, 38, 38, 0.15);
+  color: #fca5a5;
   padding: 0.75rem 1rem;
-  border-radius: 0.5rem;
+  border-radius: var(--radius-sm);
   margin-bottom: 1rem;
   font-size: 0.9rem;
+  border: 1px solid rgba(220, 38, 38, 0.3);
 }
 
 .tabla {
   width: 100%;
   border-collapse: collapse;
-  background: #fff;
-  border: 1px solid #e2e8f0;
-  border-radius: 0.75rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
   overflow: hidden;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow);
 }
 
 .tabla th {
-  background: #f8fafc;
+  background: var(--bg-alt);
   padding: 0.75rem 1rem;
   text-align: left;
   font-size: 0.8rem;
   font-weight: 600;
-  color: #64748b;
+  color: var(--text-light);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  border-bottom: 2px solid #e2e8f0;
+  border-bottom: 2px solid var(--border);
 }
 
 .tabla td {
   padding: 0.75rem 1rem;
   font-size: 0.9rem;
-  color: var(--text, #1e293b);
-  border-bottom: 1px solid #f1f5f9;
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
   vertical-align: middle;
 }
 
@@ -70,12 +72,12 @@
 }
 
 .tabla tr:hover td {
-  background: #f8fafc;
+  background: var(--bg-card-hover);
 }
 
 .precioCol {
   font-weight: 600;
-  color: var(--primary, #2563eb);
+  color: var(--accent);
 }
 
 .stockCol {
@@ -83,11 +85,11 @@
 }
 
 .disponible {
-  color: var(--success, #16a34a);
+  color: var(--success);
 }
 
 .agotado {
-  color: var(--danger, #dc2626);
+  color: var(--danger);
 }
 
 .acciones {
@@ -97,38 +99,38 @@
 
 .btnEditar {
   padding: 0.375rem 0.75rem;
-  background: #eff6ff;
-  color: var(--primary, #2563eb);
-  border: 1px solid #bfdbfe;
-  border-radius: 0.375rem;
+  background: rgba(67, 56, 202, 0.15);
+  color: #a5b4fc;
+  border: 1px solid rgba(67, 56, 202, 0.3);
+  border-radius: var(--radius-sm);
   font-size: 0.8rem;
   cursor: pointer;
-  transition: background-color 0.15s;
+  transition: background 0.15s;
 }
 
 .btnEditar:hover {
-  background: #dbeafe;
+  background: rgba(67, 56, 202, 0.25);
 }
 
 .btnEliminar {
   padding: 0.375rem 0.75rem;
-  background: #fef2f2;
-  color: #dc2626;
-  border: 1px solid #fecaca;
-  border-radius: 0.375rem;
+  background: rgba(220, 38, 38, 0.15);
+  color: #fca5a5;
+  border: 1px solid rgba(220, 38, 38, 0.3);
+  border-radius: var(--radius-sm);
   font-size: 0.8rem;
   cursor: pointer;
-  transition: background-color 0.15s;
+  transition: background 0.15s;
 }
 
 .btnEliminar:hover {
-  background: #fee2e2;
+  background: rgba(220, 38, 38, 0.25);
 }
 
 .vacio {
   text-align: center;
   padding: 3rem;
-  color: #64748b;
+  color: var(--text-light);
 }
 
 /* Header con botón de nuevo producto */
@@ -141,19 +143,20 @@
 
 .btnNuevo {
   padding: 0.625rem 1.25rem;
-  background-color: var(--primary, #2563eb);
+  background: linear-gradient(135deg, var(--primary), #6366f1);
   color: #fff;
   border: none;
-  border-radius: 0.5rem;
+  border-radius: var(--radius-sm);
   font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background 0.2s, transform 0.1s;
   white-space: nowrap;
 }
 
 .btnNuevo:hover {
-  background-color: var(--primary-hover, #1d4ed8);
+  background: linear-gradient(135deg, var(--primary-hover), #4f46e5);
+  transform: scale(1.02);
 }
 
 /* Overlay del modal */
@@ -163,7 +166,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.7);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -173,20 +176,21 @@
 
 /* Modal del formulario */
 .modal {
-  background: #fff;
-  border-radius: 0.75rem;
+  background: var(--bg-card);
+  border-radius: var(--radius);
   padding: 2rem;
   width: 100%;
   max-width: 520px;
   max-height: 90vh;
   overflow-y: auto;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border);
 }
 
 .modalTitulo {
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--text, #1e293b);
+  color: var(--text);
   margin-bottom: 1.5rem;
 }
 
@@ -199,37 +203,37 @@
   display: block;
   font-size: 0.85rem;
   font-weight: 600;
-  color: #475569;
+  color: var(--text);
   margin-bottom: 0.375rem;
 }
 
 .formInput {
   width: 100%;
   padding: 0.625rem 0.75rem;
-  border: 1px solid #cbd5e1;
-  border-radius: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
   font-size: 0.9rem;
-  color: var(--text, #1e293b);
-  background: #fff;
-  transition: border-color 0.15s;
+  color: var(--text);
+  background: var(--bg-input);
+  transition: border-color 0.15s, box-shadow 0.15s;
   box-sizing: border-box;
 }
 
 .formInput:focus {
   outline: none;
-  border-color: var(--primary, #2563eb);
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(67, 56, 202, 0.2);
 }
 
 .formTextarea {
   width: 100%;
   padding: 0.625rem 0.75rem;
-  border: 1px solid #cbd5e1;
-  border-radius: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
   font-size: 0.9rem;
-  color: var(--text, #1e293b);
-  background: #fff;
-  transition: border-color 0.15s;
+  color: var(--text);
+  background: var(--bg-input);
+  transition: border-color 0.15s, box-shadow 0.15s;
   resize: vertical;
   font-family: inherit;
   box-sizing: border-box;
@@ -237,8 +241,8 @@
 
 .formTextarea:focus {
   outline: none;
-  border-color: var(--primary, #2563eb);
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(67, 56, 202, 0.2);
 }
 
 .formRow {
@@ -261,11 +265,12 @@
   width: 18px;
   height: 18px;
   cursor: pointer;
+  accent-color: var(--primary);
 }
 
 .formCheckbox label {
   font-size: 0.9rem;
-  color: #475569;
+  color: var(--text-light);
   cursor: pointer;
 }
 
@@ -278,37 +283,40 @@
 
 .btnCancelar {
   padding: 0.625rem 1.25rem;
-  background: #f1f5f9;
-  color: #475569;
-  border: 1px solid #e2e8f0;
-  border-radius: 0.5rem;
+  background: var(--bg-input);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
   font-size: 0.9rem;
   font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.15s;
+  transition: background 0.15s;
 }
 
 .btnCancelar:hover {
-  background: #e2e8f0;
+  background: var(--bg-card-hover);
+  border-color: var(--border-light);
 }
 
 .btnGuardar {
   padding: 0.625rem 1.25rem;
-  background-color: var(--primary, #2563eb);
+  background: linear-gradient(135deg, var(--primary), #6366f1);
   color: #fff;
   border: none;
-  border-radius: 0.5rem;
+  border-radius: var(--radius-sm);
   font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background 0.2s, transform 0.1s;
 }
 
 .btnGuardar:hover {
-  background-color: var(--primary-hover, #1d4ed8);
+  background: linear-gradient(135deg, var(--primary-hover), #4f46e5);
+  transform: scale(1.02);
 }
 
 .btnGuardar:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+  transform: none;
 }
