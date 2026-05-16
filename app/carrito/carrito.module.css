@@ -1,0 +1,226 @@
+/* Estilos para la página del carrito de compra */
+
+.contenedor {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.titulo {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text, #1e293b);
+  margin-bottom: 1.5rem;
+}
+
+.vacio {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #64748b;
+}
+
+.vacio p {
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+}
+
+.enlaceCatalogo {
+  display: inline-block;
+  padding: 0.625rem 1.25rem;
+  background-color: var(--primary, #2563eb);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.enlaceCatalogo:hover {
+  background-color: #1d4ed8;
+}
+
+.lista {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.itemImagen {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  flex-shrink: 0;
+}
+
+.itemInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.itemNombre {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text, #1e293b);
+  margin-bottom: 0.25rem;
+}
+
+.itemPrecio {
+  font-size: 0.95rem;
+  color: var(--primary, #2563eb);
+  font-weight: 600;
+}
+
+.itemSubtotal {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.controles {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.btnCantidad {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s;
+}
+
+.btnCantidad:hover {
+  background: #e2e8f0;
+}
+
+.btnCantidad:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.cantidadValor {
+  font-size: 1rem;
+  font-weight: 600;
+  min-width: 24px;
+  text-align: center;
+}
+
+.btnEliminar {
+  padding: 0.375rem 0.75rem;
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+  border-radius: 0.375rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.15s;
+  margin-left: 0.5rem;
+}
+
+.btnEliminar:hover {
+  background: #fee2e2;
+}
+
+.resumen {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.resumenTitulo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text, #1e293b);
+  margin-bottom: 1rem;
+}
+
+.filaResumen {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  font-size: 0.95rem;
+  color: #475569;
+}
+
+.filaResumenTotal {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0 0;
+  margin-top: 0.75rem;
+  border-top: 2px solid #e2e8f0;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text, #1e293b);
+}
+
+.btnPagar {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 1.25rem;
+  background-color: #16a34a;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btnPagar:hover {
+  background-color: #15803d;
+}
+
+.btnPagar:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.error {
+  background: #fef2f2;
+  color: #dc2626;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.exito {
+  background: #f0fdf4;
+  color: #16a34a;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.cargando {
+  text-align: center;
+  padding: 3rem;
+  color: #64748b;
+  font-size: 1.05rem;
+}
